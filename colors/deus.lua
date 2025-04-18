@@ -181,6 +181,7 @@ local green_dark     = { '#50de60', 83, 'darkgreen' }
 local green          = { '#98C379', 142, 'green' }
 local green_light    = { '#a0ff70', 72, 'green' }
 
+local blue_grey      = { '#7a8f98', 109, 'darkblue' }
 local blue           = { '#83a598', 109, 'darkblue' }
 local cyan           = { '#8ec07c', 108, 'aqua' }
 local ice            = { '#49a0f0', 63, 'cyan' }
@@ -321,7 +322,7 @@ local highlight_group_normal = { bg = black, fg = dslight1 }
 -- This is where the rest of your highlights should go.
 local highlight_groups = {
 	--[[ 4.1. Text Analysis ]]
-	Comment     = { fg = gray, style = 'italic' },
+	Comment     = { fg = blue_grey, style = 'italic' },
 	NonText     = { fg = gray_darker },
 	EndOfBuffer = 'NonText',
 	Whitespace  = 'NonText',
@@ -332,7 +333,6 @@ local highlight_groups = {
 	Character = { fg = purple },
 	Number    = { fg = purple },
 	Boolean   = { fg = purple },
-	Float     = 'Number',
 
 	--[[ 4.1.2. Identifiers]]
 	Identifier = { fg = blue },
@@ -375,11 +375,17 @@ local highlight_groups = {
 	Ignore            = { fg = gray },
 	Error             = { bg = red_dark, fg = white },
 	Todo              = { fg = yellow, style = { 'bold', 'underline' } },
-	helpHyperTextJump = 'Underlined',
-	helpSpecial       = 'Function',
 	Hint              = { bg = magenta, fg = black, style = 'bold' },
 	Info              = { bg = pink_light, fg = black, style = 'bold' },
 	Warning           = { bg = orange, fg = black, style = 'bold' },
+
+	--[[ 4.3.37 Help ]]
+	helpHeader   = 'Label',
+	helpOption   = 'Keyword',
+	helpSpecial  = 'Function',
+	helpHeadline = 'Title',
+	helpSectionDelim  = 'Delimiter',
+	helpHyperTextJump = 'Underlined',
 
 	--[[ 4.2... Editor UI  ]]
 	--[[ 4.2.1. Status Line]]
@@ -389,11 +395,12 @@ local highlight_groups = {
 	StatusLineTermNC = 'StatusLineNC',
 
 	--[[ 4.2.2. Separators]]
-	VertSplit   = { fg = dsdark4 },
-	TabLine     = { bg = gray_darker, fg = dsdark4 },
-	TabLineFill = { bg = blue },
-	TabLineSel  = { fg = dslight3 },
+	VertSplit   = { fg = dsdark2 },
+	TabLine     = { bg = gray_darker, fg = dsdark2 },
+	TabLineFill = { bg = gray_darker },
+	TabLineSel  = { fg = dslight3, bg= blue },
 	Title       = { fg = dslight3 },
+	WinSeparator = { fg = dsdark3 },
 
 	--[[ 4.2.3. Conditional Line Highlighting]]
 	Conceal         = 'NonText',
@@ -411,7 +418,21 @@ local highlight_groups = {
 	PmenuSbar  = { fg = dsdark2 },
 	PmenuSel   = { fg = dsdark1, bg = blue, style = 'bold' },
 	PmenuThumb = { bg = dsdark4 },
-	WildMenu   = {},
+	WildMenu   = { bg = NONE },
+
+  --[[ Float ]]
+  NormalFloat = { bg = NONE },
+  FloatBorder = { fg = dsdark4, bg = NONE },
+  Float = { bg = NONE },
+  WinBar = { bg = NONE },
+  BlinkCmpMenuBorder = { fg = dsdark3 },
+
+  -- [[ Transparent ]]
+
+  -- [[Hint text]]
+  BlinkCmpGhostText = { fg = dsdark4 },
+  LspInlayHint = { fg = dsdark4 },
+
 
 	--[[ 4.2.5. Folds]]
 	FoldColumn = { bg = gray_darker, style = 'bold' },
@@ -736,7 +757,6 @@ local highlight_groups = {
 	tomlFloat   = 'Float',
 
 	--[[ 4.3.27. VimScript ]]
-	helpSpecial    = 'Special',
 	vimFgBgAttrib  = 'Constant',
 	vimHiCterm     = 'Label',
 	vimHiCtermFgBg = 'vimHiCterm',
@@ -755,7 +775,6 @@ local highlight_groups = {
 	vimContinue    = 'Constant',
 	vimCmdSep      = 'Delimiter',
 	vimFunction    = 'Function',
-	vimSetSep      = 'Delimiter',
 	vimUserFunc    = 'vimFunction',
 	vimOption      = 'Keyword',
 	vimScriptDelim = 'Ignore',
@@ -848,12 +867,6 @@ local highlight_groups = {
 	coqVernacCmd         = 'Statement',
 	coqVernacPunctuation = 'coqTermPunctuation',
 
-	--[[ 4.3.37 Help ]]
-	helpHeader = 'Label',
-	helpOption = 'Keyword',
-	helpHeadline = 'Title',
-	helpSectionDelim = 'Delimiter',
-	helpHyperTextJump = 'Underlined',
 
 	--[[ 4.4. Plugins
 		Everything in this section is OPTIONAL. Feel free to remove everything
@@ -908,7 +921,7 @@ local highlight_groups = {
 	TSAttribute = { fg = blue, style = 'italic' },
 	TSBoolean = { fg = purple },
 	TSCharacter = { fg = purple },
-	TSComment = { fg = gray },
+	TSComment = { fg = blue_grey, style="italic" },
 	TSConditional = { fg = red },
 	-- TSConstant = { fg = white },
 	TSConstBuiltin = { fg = orange },
