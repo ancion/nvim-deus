@@ -155,7 +155,6 @@ local dsdark1        = { '#3c3836', 237, 'darkgrey' }
 local dsdark2        = { '#242a32', 239, 'darkgrey' }
 local dsdark3        = { '#665c54', 241, 'darkgrey' }
 local dsdark4        = { '#7c6f64', 243, 'darkgrey' }
-local dsdark4_256    = { '#7c6f64', 243, 'darkgrey' }
 
 local dsColumn       = { '#35312f', 239, 'darkgrey' }
 
@@ -164,7 +163,6 @@ local dslight1       = { '#ebdbb2', 223, 'grey' }
 local dslight2       = { '#d5c4a1', 250, 'grey' }
 local dslight3       = { '#bdae93', 248, 'grey' }
 local dslight4       = { '#a89984', 246, 'grey' }
-local dslight4_256   = { '#a89984', 246, 'grey' }
 
 local tan            = { '#f4c069', 180, 'darkyellow' }
 
@@ -419,19 +417,6 @@ local highlight_groups = {
 	PmenuSel   = { fg = dsdark1, bg = blue, style = 'bold' },
 	PmenuThumb = { bg = dsdark4 },
 	WildMenu   = { bg = NONE },
-
-  --[[ Float ]]
-  NormalFloat = { bg = NONE },
-  FloatBorder = { fg = dsdark4, bg = NONE },
-  Float = { bg = NONE },
-  WinBar = { bg = NONE },
-  BlinkCmpMenuBorder = { fg = dsdark3 },
-
-  -- [[ Transparent ]]
-
-  -- [[Hint text]]
-  BlinkCmpGhostText = { fg = dsdark4 },
-  LspInlayHint = { fg = dsdark4 },
 
 
 	--[[ 4.2.5. Folds]]
