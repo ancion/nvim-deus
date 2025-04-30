@@ -469,6 +469,16 @@ local highlight_groups = {
 	LspDiagnosticsUnderlineInfo       = 'CocInfoHighlight',
 	LspDiagnosticsUnderlineWarning    = 'CocWarningHighlight',
 
+	-- DiagnosticUnderline               = { style = { 'undercurl', color = white } },
+	DiagnosticError                   = { fg = red },
+	DiagnosticHint                    = { fg = magenta },
+	DiagnosticInfo                    = { fg = green },
+	DiagnosticWarning                 = { fg = orange },
+
+	LspInlayHint                      = { fg = "#88698A", style = 'italic' },
+	-- LspInlayHint                      = { fg = "#775879", style = 'italic' },
+	-- LspInlayHint                      = { fg = "#756b60", style = 'italic' },
+
 	--[[ 4.2.12. Cursor ]]
 	Cursor       = { style = 'inverse' },
 	CursorIM     = 'Cursor',
